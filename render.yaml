@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: rvjcbus-backend
+    runtime: docker
+    plan: free
+    region: singapore # Choose the one closest to you
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_PORT
+        value: 12150
+      - key: MYSQL_ATTR_SSL_CA
+        value: /var/www/html/storage/certs/aiven-ca.pem
+      - key: APP_KEY
+        generateValue: true # Render will generate a random key if not provided
+      - key: DB_HOST
+        sync: false # You will set this in Render Dashboard
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false

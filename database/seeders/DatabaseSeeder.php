@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             BranchSeeder::class,
             DesignationSeeder::class,
             AdminSeeder::class,
+            DummyUserSeeder::class,
         ]);
     }
 }
